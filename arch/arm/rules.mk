@@ -207,6 +207,15 @@ GLOBAL_DEFINES += \
 	ENABLE_THUMB := true
 	HANDLED_CORE := true
 endif
+ifeq ($(ARM_CPU),cortex-r5)
+GLOBAL_DEFINES += \
+	ARM_CPU_CORTEX_R5=1 \
+	ARM_ISA_ARMv7=1 \
+	ARM_WITH_THUMB=1
+	WITH_KERNEL_VM=0
+	ENABLE_THUMB := true
+	HANDLED_CORE := true
+endif
 ifeq ($(ARM_CPU),armemu)
 # flavor of emulated cpu by the armemu project
 GLOBAL_DEFINES += \

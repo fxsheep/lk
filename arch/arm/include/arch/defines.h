@@ -37,6 +37,8 @@
 #define CACHE_LINE 64
 #elif ARM_CPU_CORTEX_R4F
 #define CACHE_LINE 64
+#elif ARM_CPU_CORTEX_R5
+#define CACHE_LINE 64
 #else
 #error unknown cpu
 #endif
