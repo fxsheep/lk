@@ -11,11 +11,11 @@ int uart_putc(char c) {
 int uart_getc(bool wait) {
     char c;
 
-    if(((*(volatile uint32_t *)0x8000100C) & 0x1) == 0)
+    if(((*(volatile uint32_t *)0x8000100C) & 0x10) == 0)
         return -1;
     else {
         c = *(volatile uint32_t *)0x80001008;
-        *(volatile uint32_t *)0x8000100c = 1;
+        *(volatile uint32_t *)0x8000100c = 0x10;
         return c;
     }
 }
